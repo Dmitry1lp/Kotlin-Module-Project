@@ -1,7 +1,7 @@
 fun main() {
     val archives = mutableListOf<Archive>()
 
-    while(true) {1
+    while(true) {
         var exitApp = false
 
         Menu.showMenu(
@@ -47,51 +47,3 @@ fun main() {
         if(exitApp) break
     }
 }
-
-    /*fun showNotesMenu(archive: Archive) {
-        val noteList = archive.noteList.map { (name, content) -> Note(name, content) }.toMutableList()
-
-        Menu.showMenu(
-            title = "Меню заметок",
-            list = noteList,
-            onCreate = {
-                val note = Note("","")
-                note.create()
-                archive.addNote(note)
-                showNotesMenu(archive)
-            },
-            onSelect = { index ->
-                val note = Note(
-                    archive.noteList.keys.elementAt(index),
-                    archive.noteList.values.elementAt(index)
-                )
-                note.showContent()
-            },
-            onExit = { showArchiveMenu() }
-        )
-    }
-
-    fun showArchiveMenu() {
-        Menu.showMenu(
-            title = "Меню архивов:",
-            list = archives,
-            onCreate = {
-                val archive = Archive("", mutableMapOf())
-                archive.create()
-                archives.add(archive)
-                showArchiveMenu()
-            },
-            onSelect = { index ->
-                val archive = archives[index]
-                showNotesMenu(archive)
-            },
-            onExit = {
-                println("Выход из программы.")
-                kotlin.system.exitProcess(0)
-            }
-        )
-    }
-
-
-    showArchiveMenu()
-}*/
